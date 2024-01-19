@@ -1,0 +1,34 @@
+<div class="table-container">
+    <label for="filter">Filtrar por nombre o apellido:</label>
+    <div class="search-bar">
+        <input type="text" id="filter" [(ngModel)]="filtro" />
+        <button (click)="nuevoCliente()">Nuevo</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Cédula</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of clientes">
+                <td>{{ cliente.id }}</td>
+                <td>{{ cliente.cedula }}</td>
+                <td>{{ cliente.nombre }}</td>
+                <td>{{ cliente.apellido }}</td>
+                <td>{{ cliente.direccion }}</td>
+                <td>{{ cliente.telefono }}</td>
+                <td>
+                    <button (click)="editarCliente(cliente)">Editar</button>
+                    <button (click)="eliminarCliente(cliente)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

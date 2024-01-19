@@ -1,0 +1,17 @@
+<!-- dashboard.component.html -->
+<div class="dashboard-container">
+    <div class="side-menu">
+        <ul>
+            <li><a routerLink="./inicio">Inicio</a></li>
+            <li><a routerLink="./clientes">Clientes</a></li>
+        </ul>
+        <!-- Nueva opción para salir -->
+        <div class="logout-option">
+            <a routerLink="/paginas/autenticacion" style="color: red;">Salir</a>
+        </div>
+    </div>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+  

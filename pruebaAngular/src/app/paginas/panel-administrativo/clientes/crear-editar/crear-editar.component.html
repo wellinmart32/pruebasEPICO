@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+<div class="formulario-container">
+    <div class="titulo">{{titulo}}</div>
+
+    <form *ngIf="formulario" [formGroup]="formulario" class="formulario">
+        <!-- Cédula -->
+        <div class="form-group">
+            <label for="cedula">Cédula</label>
+            <input type="text" id="cedula" formControlName="cedula" pattern="[0-9]*" />
+            <div *ngIf="tieneErrores('cedula')" class="error-message">
+                {{ getErrorMensaje('cedula') }}
+            </div>
+        </div>
+
+        <!-- Nombre -->
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" formControlName="nombre" />
+            <div *ngIf="tieneErrores('nombre')" class="error-message">
+                {{ getErrorMensaje('nombre') }}
+            </div>
+        </div>
+
+        <!-- Apellido -->
+        <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" formControlName="apellido" />
+            <div *ngIf="tieneErrores('apellido')" class="error-message">
+                {{ getErrorMensaje('apellido') }}
+            </div>
+        </div>
+
+        <!-- Dirección -->
+        <div class="form-group">
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" formControlName="direccion" />
+        </div>
+
+        <!-- Teléfono -->
+        <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="text" id="telefono" formControlName="telefono" />
+            <div *ngIf="tieneErrores('telefono')" class="error-message">
+                {{ getErrorMensaje('telefono') }}
+            </div>
+        </div>
+
+        <!-- Botones del formulario -->
+        <div class="form-group botones">
+            <button *ngIf="!isEdit" type="button" (click)="guardar()" class="btn-guardar" [disabled]="!formulario.valid">Guardar</button>
+            <button *ngIf="isEdit" type="button" (click)="editar()" class="btn-guardar" [disabled]="!formulario.valid">Actualizar</button>
+            <button type="button" (click)="cerrar()" class="btn-cerrar">Cerrar</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,58 @@
+/* dashboard.component.css */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+.side-menu {
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.side-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: auto; /* Ajusta el margen inferior para que "Salir" esté en la parte inferior */
+}
+
+.side-menu li {
+    margin-bottom: 20px;
+    /* Aumenta el espacio entre las opciones */
+}
+
+.side-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    /* Bordes redondeados */
+    transition: background-color 0.3s;
+}
+
+.side-menu a:hover {
+    background-color: #555;
+    /* Color de fondo al pasar el ratón */
+}
+
+.content {
+    flex-grow: 1;
+    padding: 16px;
+    background-color: #eee;
+    /* Fondo del contenedor derecho */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Sombra */
+}
+
+.logout-option {
+    margin-top: auto; /* Mueve "Salir" a la parte inferior del side-menu */
+    padding-top: 10px; /* Agrega espacio encima de "Salir" para mejorar la apariencia */
+}
